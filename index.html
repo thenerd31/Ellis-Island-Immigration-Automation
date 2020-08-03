@@ -215,9 +215,33 @@
             <option value="Yemen">
             <option value="Zambia">
             <option value="Zimbabwe">
-        </datalist>
+        </datalist><br>
+        <span>What is your occupation group?</span>
+        <select id="occupation_group" onchange="EnableDisableTextBox(this)">
+            <option value="1">Professional, Technical, and Managerial Workers</option>
+            <option value="2">Farmers and Farm Laborers</option>
+            <option value="3">Clerical and Sales Workers</option>
+            <option value="4">Craftsmen and Foremen</option>
+            <option value="5">Operatives</option>
+            <option value="6">Private Household Workers</option>
+            <option value="7">Other Service Workers, Except Private Household</option>
+            <option value="8">Laborers, Except Farm and Mine</option>
+            <option value="9">Other</option>
+        </select>
+        <br><br> Other:
+        <input type="text" id="txtOther" disabled="disabled"><br>
         <input type="submit">
     </form>
+    <script type="text/javascript">
+        function EnableDisableTextBox(occupation_group) {
+            var selectedValue = occupation_group.options[occupation_group.selectedIndex].value;
+            var txtOther = document.getElementById("txtOther");
+            txtOther.disabled = selectedValue == 9 ? false : true;
+            if (!txtOther.disabled) {
+                txtOther.focus();
+            }
+        }
+    </script>
 </body>
 
 </html>

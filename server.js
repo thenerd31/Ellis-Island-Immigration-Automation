@@ -15,6 +15,9 @@ app.get('/index.html', function(req, res) {
 app.get('/statue_of_liberty', function(req, res) {
     res.sendFile(__dirname + "/" + "statue_of_liberty.jpg");
 })
+app.get('/immigration_icon', function(req, res) {
+    res.sendFile(__dirname + "/" + "immigration_icon.png");
+})
 app.post('/process_post', urlencodedParser, function(req, res) {
     // Prepare output in JSON format
     response = {
